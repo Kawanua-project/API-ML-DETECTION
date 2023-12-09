@@ -14,4 +14,4 @@ steps:
   args: ['run', 'deploy', '${_SERVICE_NAME}', '--image', 'asia-southeast1-docker.pkg.dev/$PROJECT_ID/${_SERVICE_NAME}/trigger:${SHORT_SHA}', '--region', 'asia-southeast2', '--platform', 'managed', "--allow-unauthenticated"]
 
 images:
-- 'asia-east1-docker.pkg.dev/$PROJECT_ID/${_SERVICE_NAME}/trigger'
+- 'asia-southeast1-docker.pkg.dev/$PROJECT_ID/${_SERVICE_NAME}/trigger'
