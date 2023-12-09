@@ -1,19 +1,13 @@
-FROM python:3.9
+FROM python:3.9-slim
 
-ENV PORT 8080
-ENV HOST 0.0.0.0
+ENV PYTHONBUFFERED True
 
-EXPOSE 8080
+ENV APP_HOME /app
 
-RUN apt-get update -y && \
-    apt-get install -y python3-pip
+WORKDIR $APP_HOME
 
-COPY ./requirements.txt /app/requirements.txt
-
-WORKDIR /app
+COPY . ./
 
 RUN pip install -r requirements.txt
 
-COPY . /app
-
-ENTRYPOINT ["python", "app.py"]
+CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 app:app
