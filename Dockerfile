@@ -8,11 +8,11 @@ EXPOSE 8080
 RUN apt-get update -y && \
     apt-get install -y python3-pip
 
-COPY ./requirement.txt /app/requirement.txt
+COPY ./requirements.txt /app/requirements.txt
 
 WORKDIR /app
 
-RUN pip install -r requirement.txt
+RUN pip install -r requirements.txt
 
 COPY . /app
 
