@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 import os
 from werkzeug.utils import secure_filename
 from tensorflow.keras.models import load_model
@@ -7,7 +8,7 @@ from PIL import Image
 from io import BytesIO
 
 
-
+CORS(app)
 app = Flask(__name__)
 app.config["ALLOWED_EXTENSIONS"] = set(['png', 'jpg', 'JPEG'])
 app.config['MODEL_FILE'] = "model.h5"
