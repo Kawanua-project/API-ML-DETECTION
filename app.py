@@ -141,7 +141,7 @@ def prediction():
 
         cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cur.execute('SELECT kingdom, phylum, class, "order", family, species, nama, deskripsi, tingkat_kelangkaan, habitat FROM species WHERE label = % s', (class_names, ))
-        hewan = cur.fetchone()
+        result = cur.fetchone()
         cur.close() 
    
         return jsonify({
@@ -153,7 +153,7 @@ def prediction():
                 "endangered_prediction": class_names,
                 "confidence": confidence_score,
                 "image_url": image_url, 
-                "hewan" : hewan
+                "result" : result
             }
         }), 200
     else:
