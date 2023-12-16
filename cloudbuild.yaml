@@ -19,7 +19,7 @@ steps:
       - '--cpu=1'
       - '--memory=1024Mi'
       - '--allow-unauthenticated'
-      - '--set-secrets=MYSQL_DB=MYSQL_DB:latest,MYSQL_USER=MYSQL_USER:latest,MYSQL_PASSWORD=MYSQL_PASSWORD:latest,MYSQL_HOST=MYSQL_HOST:latest,JWT_SECRET_KEY=JWT_SECRET_KEY:latest,GCS_KEY_PATH=CS_KEY_PATH:latest,GCS_BUCKET_NAME=GCS_BUCKET_NAME:latest'
+      - '--set-secrets=MYSQL_DB=MYSQL_DB:latest,MYSQL_USER=MYSQL_USER:latest,MYSQL_PASSWORD=MYSQL_PASSWORD:latest,MYSQL_HOST=MYSQL_HOST:latest,JWT_SECRET_KEY=JWT_SECRET_KEY:latest,GCS_KEY_PATH=GCS_KEY_PATH:latest,GCS_BUCKET_NAME=GCS_BUCKET_NAME:latest'
 images:
   - 'gcr.io/$PROJECT_ID/kawanua-detection:$COMMIT_SHA'
 logsBucket: 'gs://kawanua-detection/logs'
