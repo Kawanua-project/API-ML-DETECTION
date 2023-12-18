@@ -46,7 +46,7 @@ app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 mysql = MySQL(app)
 
 
-app.config["ALLOWED_EXTENSIONS"] = set(['png', 'jpg', 'JPEG'])
+app.config["ALLOWED_EXTENSIONS"] = set(['png', 'jpg', 'jpeg'])
 app.config['MODEL_FILE'] = "model.h5"
 app.config['LABELS_FILE'] = "label.txt"
 
