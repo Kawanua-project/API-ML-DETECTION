@@ -46,7 +46,7 @@ app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 mysql = MySQL(app)
 
 
-app.config["ALLOWED_EXTENSIONS"] = set(['png', 'jpg', 'jpeg'])
+app.config["ALLOWED_EXTENSIONS"] = set(['png', 'jpg', 'jpeg', 'jfif'])
 app.config['MODEL_FILE'] = "model.h5"
 app.config['LABELS_FILE'] = "label.txt"
 
@@ -86,7 +86,7 @@ def indexs():
 
 def allowed_file(filename):
     return "." in filename and \
-        filename.split(".", 1)[1] in app.config["ALLOWED_EXTENSIONS"]
+        filename.split(".", 1)[1].lower() in app.config["ALLOWED_EXTENSIONS"]
 
 model = load_model("model.h5", compile=False)
 with open(app.config['LABELS_FILE'], 'r') as file:
