@@ -20,7 +20,7 @@ load_dotenv()
 
 # Membuat payload untuk token
 token_payload = {
-    'exp': datetime.utcnow() + timedelta(minutes=60),
+    'exp': datetime.utcnow() + timedelta(days=60),
     'iat': datetime.utcnow()
 }
 
@@ -129,9 +129,6 @@ def prediction():
         class_names = labels[index]
         confidence_score = float(prediction[0][index])
            
-        
-
-    
         filename = secure_filename(image.filename)
         blob = storage_client.bucket(bucket_name).blob(filename)
         blob.upload_from_string(image_content, content_type=image.content_type)
