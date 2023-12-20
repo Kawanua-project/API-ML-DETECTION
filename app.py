@@ -8,7 +8,7 @@ from flask_jwt_extended import JWTManager, jwt_required, create_access_token, ge
 from PIL import Image
 from io import BytesIO
 from datetime import datetime, timedelta
-import jwt  # Make sure to import jwt library
+import jwt  
 from google.cloud import storage
 import os
 import MySQLdb.cursors
